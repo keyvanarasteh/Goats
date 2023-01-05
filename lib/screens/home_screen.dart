@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/playlist_model.dart';
 import '../models/song_model.dart';
 import '../widgets/widgets.dart';
+package:flutter_music_app_ui/screens/home_screen.dart
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -110,6 +111,25 @@ class _TrendingMusic extends StatelessWidget {
   }
 }
 
+InputChip(
+  padding: EdgeInsets.all(2.0),
+  avatar: CircleAvatar(
+    backgroundColor: Colors.pink.shade600,
+    child: Text('FD'),
+  ),
+  label: Text('Flutter Devs',style: TextStyle(color:
+  _isSelected?Colors.white:Colors.black),
+  ),
+  selected: _isSelected,
+  selectedColor: Colors.blue.shade600,
+  onSelected: (bool selected) {
+    setState(() {
+      _isSelected = selected;
+    });
+  },
+  onDeleted: () {
+  },
+);
 class _DiscoverMusic extends StatelessWidget {
   const _DiscoverMusic({
     Key? key,
@@ -157,6 +177,7 @@ class _DiscoverMusic extends StatelessWidget {
     );
   }
 }
+
 
 class _CustomNavBar extends StatelessWidget {
   const _CustomNavBar({
@@ -221,3 +242,4 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(56.0);
 }
+
