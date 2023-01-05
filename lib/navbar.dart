@@ -27,7 +27,7 @@ class NavBar extends StatelessWidget {
               image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      'https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000')),
+                      'https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?cs=srgb&dl=pexels-veeterzy-114979.jpg&fm=jpg')),
             ),
           ),
           ListTile(

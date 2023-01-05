@@ -13,22 +13,22 @@ class Playlist {
 
   static List<Playlist> playlists = [
     Playlist(
-      title: 'Hip-hop R&B Mix',
+      title: 'Hip-hop',
       songs: Song.songs,
       imageUrl:
-          'https://images.unsplash.com/photo-1576525865260-9f0e7cfb02b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80',
+          'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/137625112577745.60177189ef503.png',
     ),
     Playlist(
       title: 'Rock & Roll',
       songs: Song.songs,
       imageUrl:
-          'https://images.unsplash.com/photo-1629276301820-0f3eedc29fd0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2848&q=80',
+          'https://i.pinimg.com/474x/d0/3d/5f/d03d5f0d9d16b8d3e61e938e8fd12c33.jpg',
     ),
     Playlist(
-      title: 'Techno',
+      title: 'Electronic Dance Music',
       songs: Song.songs,
       imageUrl:
-          'https://images.unsplash.com/photo-1594623930572-300a3011d9ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+          'https://i.scdn.co/image/ab67706c0000da8477e7244d09f4be1eeee0cd62',
     )
   ];
 }
