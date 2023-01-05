@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         drawer: NavBar(),
         appBar: AppBar(
           //leading: Icon(Icons.grid_view_rounded),
-          backgroundColor: Color.fromARGB(255, 76, 0, 207),
+          backgroundColor: const Color.fromARGB(255, 76, 0, 207),
           //title: const Text('ISUMUSIC'),
           title: Image.asset('assets/images/eco4.gif',
               height: 180, width: 120, fit: BoxFit.contain),

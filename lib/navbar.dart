@@ -10,7 +10,7 @@ class NavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: const Text('ISUProject.com'),
+            accountName: const Text('ISUProject.comm'),
             accountEmail: const Text('flutterproject@fbi.com'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
