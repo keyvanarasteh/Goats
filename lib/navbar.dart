@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class NavBar extends StatelessWidget {
   @override
+  final textStyle = const TextStyle(color: Color.fromARGB(255, 65, 65, 66));
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
@@ -30,39 +31,58 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.favorite),
-            title: const Text('Favorites'),
+            leading: Icon(Icons.favorite),
+            title: Text(
+              'Favorite',
+              style: textStyle,
+            ),
             onTap: () => null,
           ),
           ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text('Friends'),
+            leading: Icon(Icons.person),
+            title: Text(
+              'Friends',
+              style: textStyle,
+            ),
             onTap: () => null,
           ),
           ListTile(
-            leading: const Icon(Icons.share),
-            title: const Text('Share'),
+            leading: Icon(Icons.share),
+            title: Text(
+              'Share',
+              style: textStyle,
+            ),
             onTap: () => null,
           ),
-          const ListTile(
+          ListTile(
             leading: Icon(Icons.notifications),
-            title: Text('Request'),
+            title: Text(
+              'Request',
+              style: textStyle,
+            ),
           ),
-          Divider(),
           ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
+            leading: Icon(Icons.settings),
+            title: Text(
+              'Settings',
+              style: textStyle,
+            ),
             onTap: () => null,
           ),
           ListTile(
-            leading: const Icon(Icons.description),
-            title: const Text('Policies'),
+            leading: Icon(Icons.description),
+            title: Text(
+              'Policies',
+              style: textStyle,
+            ),
             onTap: () => null,
           ),
-          const Divider(),
           ListTile(
-            title: const Text('Exit'),
-            leading: const Icon(Icons.exit_to_app),
+            title: Text(
+              'Exit',
+              style: textStyle,
+            ),
+            leading: Icon(Icons.exit_to_app),
             onTap: () => null,
           ),
         ],
