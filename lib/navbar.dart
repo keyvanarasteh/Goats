@@ -15,7 +15,7 @@ class NavBar extends StatelessWidget {
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.network(
-                  'https://oflutter.com/wp-content/uploads/2021/02/girl-profile.png',
+                  'https://myisu.istinye.edu.tr/sites/default/files/pictures/2022-02/keyvan.abbasabad.jpg',
                   fit: BoxFit.cover,
                   width: 90,
                   height: 90,
@@ -27,7 +27,7 @@ class NavBar extends StatelessWidget {
               image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
-                      'https://oflutter.com/wp-content/uploads/2021/02/profile-bg3.jpg')),
+                      'https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000')),
             ),
           ),
           ListTile(
