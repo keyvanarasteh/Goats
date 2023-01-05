@@ -13,6 +13,13 @@ class Song {
 
   static List<Song> songs = [
     Song(
+      title: 'Zorundamıyım',
+      description: 'Dilberay & Şahan',
+      url:
+          'assets/music/Zorundamıyım  Şahan  Dilber ay  [ Full ]Turkcell Reklamları.mp3',
+      coverUrl: 'assets/images/zorundamıyım_background.jpg',
+    ),
+    Song(
       title: 'AC&DC',
       description: 'Rock',
       url: 'assets/music/AC_DC - Highway to Hell.mp3',
