@@ -24,7 +24,11 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         drawer: NavBar(),
         appBar: AppBar(
-          title: const Text('SideBar'),
+          //leading: Icon(Icons.grid_view_rounded),
+          backgroundColor: Color.fromARGB(255, 169, 126, 243),
+          //title: const Text('ISUMUSIC'),
+          title: Image.asset('assets/images/eco4.gif',
+              height: 180, width: 120, fit: BoxFit.contain),
         ),
         body: const HomeScreen(),
       ),
