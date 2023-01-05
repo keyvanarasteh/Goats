@@ -123,7 +123,7 @@ class _DiscoverMusic extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Welcome',
+            'Hoşgeldin',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
           const SizedBox(height: 5),
