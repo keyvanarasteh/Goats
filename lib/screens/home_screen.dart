@@ -91,7 +91,7 @@ class _TrendingMusic extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.only(right: 20.0),
-            child: SectionHeader(title: 'Trend Music'),
+            child: SectionHeader(title: 'Trending Music'),
           ),
           const SizedBox(height: 20),
           SizedBox(
