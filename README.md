@@ -1,4 +1,4 @@
 ## GOATS Grubuna aittir bu proje. 
 # Projeyi yapanlar Yağız Can Çakıroğlu, Cahit Saral ve Hasancan Kahraman'dır.
 # Öğrenci numaraları ise sırayla: 212016709, 212016723, 212016715
-![Ana sayfa kısmı](assets/github/Simulator Screen Shot - iPhone 14 Pro Max - 2023-01-20 at 12.28.50.png)
+![Ana Sayfa Kısmı](https://user-images.githubusercontent.com/94487965/213664890-d079d00a-ec7c-48e3-a161-bfb6b3a0b45e.png)
