@@ -13,6 +13,12 @@ class Playlist {
 
   static List<Playlist> playlists = [
     Playlist(
+      title: 'Haftalık Keşif',
+      songs: Song.songs,
+      imageUrl:
+          'https://digitalage.com.tr/wp-content/uploads/2020/08/haftalik-kesif-ozelligi-turkiyede.jpg',
+    ),
+    Playlist(
       title: 'Hip-hop',
       songs: Song.songs,
       imageUrl:
@@ -29,6 +35,12 @@ class Playlist {
       songs: Song.songs,
       imageUrl:
           'https://i.scdn.co/image/ab67706c0000da8477e7244d09f4be1eeee0cd62',
+    ),
+    Playlist(
+      title: 'Arabesk',
+      songs: Song.songs,
+      imageUrl:
+          'https://i.scdn.co/image/ab67706c0000da841d91d9403b32aae4cf56bc9f',
     )
   ];
 }
