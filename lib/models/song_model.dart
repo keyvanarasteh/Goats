@@ -72,5 +72,11 @@ class Song {
       url: 'assets/music/zorundamiyim.mp3',
       coverUrl: 'assets/images/hadise_background.jpeg',
     ),
+    Song(
+      title: 'Cahit Saral',
+      description: 'Trabzon',
+      url: 'assets/music/zorundamiyim.mp3',
+      coverUrl: 'assets/images/cahitsaral.jpeg',
+    ),
   ];
 }

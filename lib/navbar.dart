@@ -8,6 +8,7 @@ class NavBar extends StatelessWidget {
       child: ListView(
         // Remove padding
         padding: EdgeInsets.zero,
+
         children: [
           UserAccountsDrawerHeader(
             accountName: const Text('ISUProject.comm'),
