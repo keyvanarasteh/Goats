@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_music_app_ui/screens/favorite_page.dart';
+import 'package:flutter_music_app_ui/screens/policies_page.dart';
+import 'package:flutter_music_app_ui/screens/request_page.dart';
+import 'package:flutter_music_app_ui/screens/settings_page.dart';
+import 'package:flutter_music_app_ui/screens/share_page.dart';
+import 'dart:io';
 
 class NavBar extends StatelessWidget {
   @override
-  final textStyle = const TextStyle(color: Color.fromARGB(255, 65, 65, 66));
+  final textStyle = const TextStyle(
+    color: Color.fromARGB(255, 125, 21, 190),
+  );
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.deepPurple.shade200.withOpacity(0.8),
       child: ListView(
         // Remove padding
         padding: EdgeInsets.zero,
@@ -37,15 +47,10 @@ class NavBar extends StatelessWidget {
               'Favorite',
               style: textStyle,
             ),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text(
-              'Friends',
-              style: textStyle,
-            ),
-            onTap: () => null,
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => FavoritePage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.share),
@@ -53,7 +58,10 @@ class NavBar extends StatelessWidget {
               'Share',
               style: textStyle,
             ),
-            onTap: () => null,
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => SharePage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.notifications),
@@ -61,6 +69,10 @@ class NavBar extends StatelessWidget {
               'Request',
               style: textStyle,
             ),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => RequestPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings),
@@ -68,7 +80,10 @@ class NavBar extends StatelessWidget {
               'Settings',
               style: textStyle,
             ),
-            onTap: () => null,
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => SettingsPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.description),
@@ -76,7 +91,10 @@ class NavBar extends StatelessWidget {
               'Policies',
               style: textStyle,
             ),
-            onTap: () => null,
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => PoliciesPage()));
+            },
           ),
           ListTile(
             title: Text(
@@ -84,7 +102,9 @@ class NavBar extends StatelessWidget {
               style: textStyle,
             ),
             leading: Icon(Icons.exit_to_app),
-            onTap: () => null,
+            onLongPress: () {
+              SystemNavigator.pop();
+            },
           ),
         ],
       ),

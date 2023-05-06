@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_music_app_ui/screens/ekolayzer_page.dart';
+import 'package:flutter_music_app_ui/screens/settings_page.dart';
+import 'package:flutter_music_app_ui/screens/share_page.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart' as rxdart;
+import 'package:share_plus/share_plus.dart';
 
 import '../models/song_model.dart';
 import '../widgets/widgets.dart';
@@ -136,7 +140,12 @@ class _MusicPlayer extends StatelessWidget {
             children: [
               IconButton(
                 iconSize: 35,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Ekolayzer()),
+                  );
+                },
                 icon: const Icon(
                   Icons.settings,
                   color: Colors.white,
@@ -144,9 +153,12 @@ class _MusicPlayer extends StatelessWidget {
               ),
               IconButton(
                 iconSize: 35,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SharePage()));
+                },
                 icon: const Icon(
-                  Icons.cloud_download,
+                  Icons.share,
                   color: Colors.white,
                 ),
               ),

@@ -37,6 +37,16 @@ dependencies:
   get: ^4.6.5
   just_audio: ^0.9.28
   rxdart: ^0.27.5
+  flutter_svg: ^1.1.6
+  google_fonts: ^3.0.1
+  google_nav_bar: ^5.0.6
+  lottie: ^2.2.0
+  shared_preferences: ^2.1.0
+  share: ^2.0.4
+  url_launcher: ^6.1.10
+  share_plus: ^4.5.3
+  http: ^0.13.6
+  image_gallery_saver: ^1.7.1
   
 dev_dependencies:
   flutter_test:
@@ -64,7 +74,7 @@ flutter:
   assets:
     - assets/images/
     - assets/music/
-
+    - assets/icons/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

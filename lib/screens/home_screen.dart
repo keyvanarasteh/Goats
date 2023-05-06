@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_music_app_ui/screens/favorite_page.dart';
+import 'package:flutter_music_app_ui/screens/play_page.dart';
+import 'package:flutter_music_app_ui/screens/profil_page.dart';
 import '../models/playlist_model.dart';
 import '../models/song_model.dart';
 import '../widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         // appBar: const _CustomAppBar(),
-        bottomNavigationBar: const _CustomNavBar(),
+        bottomNavigationBar: _CustomNavBar(),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -123,7 +125,7 @@ class _DiscoverMusic extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Hoşgeldin',
+            'Welcome!',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
           const SizedBox(height: 5),
@@ -131,7 +133,7 @@ class _DiscoverMusic extends StatelessWidget {
             'Enjoy your favorite music',
             style: Theme.of(context)
                 .textTheme
-                .headline6!
+                .titleLarge!
                 .copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20),
@@ -139,12 +141,12 @@ class _DiscoverMusic extends StatelessWidget {
             decoration: InputDecoration(
               isDense: true,
               filled: true,
-              fillColor: Colors.white,
-              hintText: 'Search',
+              fillColor: Colors.deepPurple[100],
+              hintText: 'What\'s on your mind?',
               hintStyle: Theme.of(context)
                   .textTheme
                   .bodyMedium!
-                  .copyWith(color: Colors.grey.shade400),
+                  .copyWith(color: Colors.deepPurple),
               prefixIcon: Icon(Icons.search, color: Colors.grey.shade400),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.0),
@@ -159,9 +161,24 @@ class _DiscoverMusic extends StatelessWidget {
 }
 
 class _CustomNavBar extends StatelessWidget {
-  const _CustomNavBar({
+  _CustomNavBar({
     Key? key,
   }) : super(key: key);
+
+  final tabs = [
+    Center(
+      child: Text('Home'),
+    ),
+    Center(
+      child: Text('Favorite'),
+    ),
+    Center(
+      child: Text('Play'),
+    ),
+    Center(
+      child: Text('Profil'),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -190,34 +207,44 @@ class _CustomNavBar extends StatelessWidget {
           label: 'Profile',
         ),
       ],
+      onTap: (index) {
+        switch (index) {
+          case 0:
+            // Home page
+            HomeScreen();
+            break;
+          case 1:
+            // Favorites page
+            FavoritePage();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => FavoritePage(),
+              ),
+            );
+            break;
+          case 2:
+            // Play page
+            PlayPage();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PlayPage(),
+              ),
+            );
+            break;
+          case 3:
+            // Profile page
+            ProfilePage();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfilePage(),
+              ),
+            );
+            break;
+        }
+      },
     );
   }
-}
-
-class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-  const _CustomAppBar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      leading: const Icon(Icons.grid_view_rounded),
-      actions: [
-        Container(
-          margin: const EdgeInsets.only(right: 20),
-          child: const CircleAvatar(
-            backgroundImage: NetworkImage(
-              'https://cdn.discordapp.com/icons/905545684801974362/4e8a1e7048fcce20b04d03bc92e5e208.webp?size=96',
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(56.0);
 }

@@ -79,4 +79,8 @@ class Song {
       coverUrl: 'assets/images/cahitsaral.jpeg',
     ),
   ];
+
+  get artist => null;
+
+  String? get image => null;
 }
