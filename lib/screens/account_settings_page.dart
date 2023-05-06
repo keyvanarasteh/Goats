@@ -8,6 +8,9 @@ class AccountSettingsPage extends StatefulWidget {
 class _AccountSettingsPageState extends State<AccountSettingsPage> {
   bool _notificationsEnabled = true;
   bool _darkModeEnabled = false;
+  String _name = 'Keyvan Arasteh';
+  String _email = 'flutterproject@fbi.com';
+  String _password = '********';
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +38,107 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 20),
+              Text(
+                'Personal Information',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: _darkModeEnabled ? Colors.white : Colors.black,
+                ),
+              ),
+              SizedBox(height: 10),
+              Card(
+                color: _darkModeEnabled ? Colors.grey.shade800 : Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Name',
+                        style: TextStyle(
+                          color: _darkModeEnabled ? Colors.white : Colors.black,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Enter your name',
+                          hintStyle: TextStyle(
+                            color: _darkModeEnabled
+                                ? Colors.grey.shade400
+                                : Colors.grey.shade600,
+                          ),
+                        ),
+                        style: TextStyle(
+                          color: _darkModeEnabled ? Colors.white : Colors.black,
+                        ),
+                        onChanged: (value) {
+                          setState(() {
+                            _name = value;
+                          });
+                        },
+                        controller: TextEditingController(text: _name),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Email',
+                        style: TextStyle(
+                          color: _darkModeEnabled ? Colors.white : Colors.black,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Enter your email',
+                          hintStyle: TextStyle(
+                            color: _darkModeEnabled
+                                ? Colors.grey.shade400
+                                : Colors.grey.shade600,
+                          ),
+                        ),
+                        style: TextStyle(
+                          color: _darkModeEnabled ? Colors.white : Colors.black,
+                        ),
+                        onChanged: (value) {
+                          setState(() {
+                            _email = value;
+                          });
+                        },
+                        controller: TextEditingController(text: _email),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Password',
+                        style: TextStyle(
+                          color: _darkModeEnabled ? Colors.white : Colors.black,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Enter your password',
+                          hintStyle: TextStyle(
+                            color: _darkModeEnabled
+                                ? Colors.grey.shade400
+                                : Colors.grey.shade600,
+                          ),
+                        ),
+                        style: TextStyle(
+                          color: _darkModeEnabled ? Colors.white : Colors.black,
+                        ),
+                        onChanged: (value) {
+                          setState(() {
+                            _password = value;
+                          });
+                        },
+                        controller: TextEditingController(text: _password),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               SizedBox(height: 20),
               Text(
                 'Notifications',
@@ -93,6 +197,21 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
                       });
                     },
                   ),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // TODO: Implement delete account functionality
+                },
+                child: Text(
+                  'Delete Account',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red,
                 ),
               ),
             ],

@@ -19,81 +19,98 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
         title: Text('Bildirim Ayarları'),
       ),
       backgroundColor: Colors.deepPurple.shade200.withOpacity(0.8),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Bildirimler',
-              style: TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
+      body: Builder(
+        builder: (context) => Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Bildirimler',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 16.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Bildirimleri Aç/Kapat',
-                  style: TextStyle(fontSize: 18.0),
-                ),
-                Switch(
-                  value: _isEnabled,
-                  onChanged: (value) {
-                    setState(() {
-                      _isEnabled = value;
-                    });
-                  },
-                ),
-              ],
-            ),
-            SizedBox(height: 16.0),
-            Text(
-              'Bildirim Ayarları',
-              style: TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
+              SizedBox(height: 16.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Bildirimleri Aç/Kapat',
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                  Switch(
+                    value: _isEnabled,
+                    onChanged: (value) {
+                      setState(() {
+                        _isEnabled = value;
+                      });
+                      if (value) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Bildirimler Açıldı'),
+                            duration: Duration(seconds: 2),
+                          ),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Bildirimler Kapatıldı'),
+                            duration: Duration(seconds: 2),
+                          ),
+                        );
+                      }
+                    },
+                  ),
+                ],
               ),
-            ),
-            SizedBox(height: 16.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Sesli Bildirimler',
-                  style: TextStyle(fontSize: 18.0),
+              SizedBox(height: 16.0),
+              Text(
+                'Bildirim Ayarları',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
                 ),
-                Switch(
-                  value: _isSoundEnabled,
-                  onChanged: (value) {
-                    setState(() {
-                      _isSoundEnabled = value;
-                    });
-                  },
-                ),
-              ],
-            ),
-            SizedBox(height: 16.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Titreşimli Bildirimler',
-                  style: TextStyle(fontSize: 18.0),
-                ),
-                Switch(
-                  value: _isVibrationEnabled,
-                  onChanged: (value) {
-                    setState(() {
-                      _isVibrationEnabled = value;
-                    });
-                  },
-                ),
-              ],
-            ),
-          ],
+              ),
+              SizedBox(height: 16.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Sesli Bildirimler',
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                  Switch(
+                    value: _isSoundEnabled,
+                    onChanged: (value) {
+                      setState(() {
+                        _isSoundEnabled = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(height: 16.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Titreşimli Bildirimler',
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                  Switch(
+                    value: _isVibrationEnabled,
+                    onChanged: (value) {
+                      setState(() {
+                        _isVibrationEnabled = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

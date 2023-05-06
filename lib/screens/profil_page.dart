@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_music_app_ui/screens/account_settings_page.dart';
 import 'package:flutter_music_app_ui/screens/favorite_page.dart';
 import 'package:flutter_music_app_ui/screens/help_feedback_page.dart';
 import 'package:flutter_music_app_ui/screens/play_page.dart';
@@ -43,7 +44,10 @@ class ProfilePage extends StatelessWidget {
             ),
             SizedBox(height: 16.0),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => AccountSettingsPage()));
+              },
               icon: Icon(Icons.edit),
               label: Text('Edit Profile'),
               style: ElevatedButton.styleFrom(
